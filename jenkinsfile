@@ -4,14 +4,6 @@ pipeline {
     agent any
     
     stages {
-        stage("Pre Clean Up") {
-            steps {
-                script {
-                    cleanWorkspace = cleanWorkspace()
-
-                }
-            }
-        }
         stage("Clone Git Repo") {
             steps {
                 script {
@@ -27,6 +19,15 @@ pipeline {
                 script {
                     def sayHello = sayHello('yyj')
                     echo $sayHello
+                }
+            }
+
+        }
+        stage("Post Clean Up") {
+            steps {
+                script {
+                    cleanWorkspace = cleanWorkspace()
+
                 }
             }
         }
