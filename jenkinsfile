@@ -8,6 +8,7 @@ pipeline {
             steps {
                 script {
                     echo "Hello"
+                    checkoutCode("https://github.com/octocat/Hello-World","master")
                 }
             }
     
@@ -16,7 +17,6 @@ pipeline {
             steps {
                 script {
                     def sayHello = sayHello('yyj')
-                    echo $sayHello
                 }
             }
 
