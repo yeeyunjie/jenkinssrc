@@ -2,7 +2,16 @@
 
 pipeline {
     agent any
+    
     stages {
+        stage("Pre Clean Up") {
+            steps {
+                script {
+                    cleanWorkspace = cleanWorkspace()
+
+                }
+            }
+        }
         stage("Clone Git Repo") {
             steps {
                 script {
