@@ -4,11 +4,16 @@ pipeline {
     agent any
     stages {
         stage("Clone Git Repo") {
-            echo "Hello"
-            checkoutCode 'https://github.com/yeeyunjie/jenkinssrc' 'main'
+            steps {
+                echo "Hello"
+                checkoutCode 'https://github.com/yeeyunjie/jenkinssrc' 'main'               
+            }
+    
         }
         stage("Dummy Stage") {
-            sayHello 'yyj'
+            steps {
+                sayHello 'yyj'
+            }
         }
     }
 }
