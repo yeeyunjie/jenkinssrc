@@ -7,7 +7,7 @@ pipeline {
             steps {
                 script {
                     echo "Hello"
-                    def checkoutCode = checkoutCode('https://github.com/yeeyunjie/jenkinssrc','main')            
+                    def checkoutCode = checkoutCode('https://github.com/octocat/Hello-World','main')            
                     echo $checkoutCode 
                 }
             }
