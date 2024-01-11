@@ -23,13 +23,11 @@ pipeline {
             }
 
         }
-        stage("Post Clean Up") {
-            steps {
-                script {
-                    cleanWorkspace = cleanWorkspace()
-
-                }
-            }
+    }
+    post {
+        always {
+            def cleanWorkspace = cleanWorkspace()
+            echo $cleanWorkspace
         }
     }
 }
