@@ -1,19 +1,23 @@
-@Library('common-templates') _
+@Library('common-templates')_
 
 pipeline {
     agent any
     stages {
         stage("Clone Git Repo") {
             steps {
-                echo "Hello"
-                def checkoutCode = checkoutCode('https://github.com/yeeyunjie/jenkinssrc','main')            
-                echo $checkoutCode   
+                script {
+                    echo "Hello"
+                    def checkoutCode = checkoutCode('https://github.com/yeeyunjie/jenkinssrc','main')            
+                    echo $checkoutCode 
+                }
             }
     
         }
         stage("Dummy Stage") {
             steps {
-                def sayHello = sayHello('yyj')
+                script {
+                    def sayHello = sayHello('yyj')
+                }
             }
         }
     }
