@@ -26,8 +26,13 @@ pipeline {
     }
     post {
         always {
-            def cleanWorkspace = cleanWorkspace()
-            echo $cleanWorkspace
+            steps{
+               script {
+                def cleanWorkspace = cleanWorkspace()
+                echo $cleanWorkspace
+            } 
+            }
+            
         }
     }
 }
