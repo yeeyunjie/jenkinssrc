@@ -1,4 +1,5 @@
-@Library 'common-templates'
+@Library('common-templates')
+
 pipeline {
     agent any
     stages {
