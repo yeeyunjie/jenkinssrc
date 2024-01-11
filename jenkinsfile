@@ -26,7 +26,7 @@ pipeline {
     }
     post {
         always {
-                def cleanWorkspace = cleanWorkspace()            
+                sh 'rm -rf ${WORKSPACE}/*'     
             }
             
         }
