@@ -6,13 +6,14 @@ pipeline {
         stage("Clone Git Repo") {
             steps {
                 echo "Hello"
-                checkoutCode 'https://github.com/yeeyunjie/jenkinssrc' 'main'               
+                def checkoutCode = checkoutCode('https://github.com/yeeyunjie/jenkinssrc','main')            
+                echo $checkoutCode   
             }
     
         }
         stage("Dummy Stage") {
             steps {
-                sayHello 'yyj'
+                def sayHello = sayHello('yyj')
             }
         }
     }
