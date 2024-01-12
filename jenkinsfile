@@ -13,10 +13,10 @@ pipeline {
             }
     
         }
-        stage("Dummy Stage") {
+        stage("Test") {
             steps {
                 script {
-                    def sayHello = sayHello('yyj')
+                    sayHello('yyj')
                 }
             }
 
