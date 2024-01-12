@@ -16,7 +16,7 @@ pipeline {
         stage("Test") {
             steps {
                 script {
-                    sayHello(name: "yyj", dayOfWeek: "Thursday)
+                    sayHello(name: "yyj", dayOfWeek:Thursday)
                 }
             }
 
